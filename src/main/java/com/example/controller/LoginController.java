@@ -14,16 +14,16 @@ public class LoginController {
     }
     
     @GetMapping("/") // ルートURL ("/") に対するGETリクエストを処理します
-    public String redirectToIndex() {
+    public String redirectToMenu() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // 現在のユーザーの認証情報を取得します
         if (authentication != null && authentication.isAuthenticated()) { // ユーザーがログインしている場合
-            return "redirect:/index";  // "/index"にリダイレクトします
+            return "redirect:/menu";  // "/menu"にリダイレクトします
         }
         return "redirect:/login"; // ユーザーがログインしていない場合、"/login"にリダイレクトします
     }
     
-    @GetMapping("/index") // "/index"というURLに対するGETリクエストを処理します
-    public String index() {
-        return "index"; // index.htmlを表示します
+    @GetMapping("/menu") // "/menu"というURLに対するGETリクエストを処理します
+    public String menu() {
+        return "menu"; // menu.htmlを表示します
     }
 }

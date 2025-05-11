@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>勤怠管理メニュー</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <h1>勤怠管理システム</h1>
+    <p>ようこそ、<span th:text="${#authentication.name}">ユーザー名</span> さん</p>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/attendance}">勤怠打刻</a></li>
+            <li><a th:href="@{/request/leave}">休暇申請</a></li>
+            <li><a th:href="@{/request/status}">申請状況確認</a></li>
+            <li><a th:href="@{/profile}">プロフィール管理</a></li>
+            <li><a th:href="@{/logout}">ログアウト</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
